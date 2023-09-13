@@ -5,7 +5,6 @@
  *
  * @c: The character to be checked.
  * Return: 1 if c is lowercase.
- * 
  *
  */
 
