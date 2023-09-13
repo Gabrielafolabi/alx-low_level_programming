@@ -3,8 +3,10 @@
 /**
  * _islower - Write a function that checks for lowercase character.
  *
+ * @c: The character to be checked.
  * Return: 1 if c is lowercase.
- * Return: 0 if c is not lowercase. 
+ * 
+ *
  */
 
 
