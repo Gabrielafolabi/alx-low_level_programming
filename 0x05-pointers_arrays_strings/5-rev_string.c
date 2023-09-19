@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
-  * rev_string - Reverses a string
+  * rev_string - Funtion that Reverses a string
   * @s: The string to be modified
   *
   * Return: void
   */
 
-void rev_string(char *s)
+void rev_string(char *s)i
 {
 	int i, b, c;
 	char *a, rev;
