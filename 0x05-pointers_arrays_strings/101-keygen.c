@@ -12,14 +12,13 @@
 
 
 
-// Function to generate a random character
 char random_char() {
     const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+";
     const size_t charset_size = sizeof(charset) - 1;
     return charset[rand() % charset_size];
 }
 
-// Function to generate a random valid password
+
 void generate_password(int length) {
     if (length < 8) {
         printf("Password length must be at least 8 characters.\n");
@@ -34,7 +33,7 @@ void generate_password(int length) {
 }
 
 int main() {
-    srand(time(NULL)); // Seed the random number generator with the current time
+    srand(time(NULL));
 
     int password_length;
     printf("Enter the desired password length: ");
