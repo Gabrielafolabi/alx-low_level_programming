@@ -21,7 +21,7 @@ char *_strncpy(char *dest, char *src, int n)
 	}
 
 	for (; len_string < n ; len_string++)
-	
+
 	dest[len_string] = '\0';
 	return (dest);
 }
