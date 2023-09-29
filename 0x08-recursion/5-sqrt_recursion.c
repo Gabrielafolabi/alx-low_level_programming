@@ -20,7 +20,7 @@ int square_root(int a, int b)
 		return (-1);
 	}
 	else
-		return (square_root(a, (b + 1)));
+		return(square_root(a, (b + 1)));
 
 } 
 
@@ -30,8 +30,8 @@ int square_root(int a, int b)
 /**
  * _sqrt_recursion - function that returns the natural square root of a number
  *
- * @n - input number
- * Return - Always 0
+ * @n:  input number
+ * Return:  Always 0
  */
 
 int _sqrt_recursion(int n)
@@ -43,7 +43,7 @@ int _sqrt_recursion(int n)
 	}
 	else
 	{
-		return (square_root(n, 0));
+		return(square_root(n, 0));
 	}
 
 }
