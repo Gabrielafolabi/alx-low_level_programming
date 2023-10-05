@@ -20,19 +20,18 @@ char *create_array(unsigned int size, char c)
 	string = malloc(size * sizeof(char));
 	if (size == 0)
 	{
-		return(NULL);
+		return (NULL);
 	}
-	
 	if (string == NULL)
 	{
-		return(NULL);
+		return (NULL);
 	}
 
-	for (i =0; i< size; i++)
+	for (i = 0; i < size; i++)
 	{
 		string[i] = c;
-	
+
 	}
-	return(string);
+	return (string);
 
 }
