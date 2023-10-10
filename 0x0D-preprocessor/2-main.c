@@ -1,8 +1,3 @@
-/*
- * File: 2-main.c
- * Auth: Brennan D Baraban
- */
-
 #include <stdio.h>
 
 /**
