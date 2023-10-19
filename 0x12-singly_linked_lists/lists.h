@@ -17,7 +17,6 @@ typedef struct list_single
 {
 	char *str;
 	unsigned int len;
-	unsigned int num;
 	struct list_single *next;
 } list_t;
 
