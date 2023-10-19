@@ -24,7 +24,7 @@ size_t print_list(const list_t *i)
 		}
 
 		block++;
-		i = i->next
+		i = i->next;
 	}
 
 	return (block);
