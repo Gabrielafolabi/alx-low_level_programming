@@ -8,6 +8,7 @@
  * struct list_s - list singly linked
  * @str: string - (malloc string)
  * @len: string length
+ * @num: still length
  * @next: points to the next node
  */
 
@@ -16,6 +17,7 @@ typedef struct list_s
 {
 	char *str;
 	unsigned int len;
+	unsigned int num;
 	struct list_s *next;
 } list_t;
 
