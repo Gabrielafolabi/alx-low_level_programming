@@ -13,13 +13,13 @@ unsigned int binary_to_uint(const char *b)
 	int length;
 
 	if (*b == '\0')
-	{	
+	{
 		return (0);
 
 	}
 
 	for (length = 0; b[length];)
-	{	
+	{
 		length++;
 
 	}
@@ -27,7 +27,7 @@ unsigned int binary_to_uint(const char *b)
 	for (length -= 1; length >= 0; length--)
 	{
 		if (b[length] != '0' && b[length] != '1')
-		{	
+		{
 			return (0);
 		}
 		num += (b[length] - '0') * iteratn;
