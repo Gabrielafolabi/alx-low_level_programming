@@ -12,11 +12,11 @@ def island_perimeter(grid):
         for b, n in range(y):
             if n == 1:
                 if x == 0 or grid[x- 1][b] != 1:
-                    c += 1
+                    a += 1
                 if b == 0 or grid[x][b - 1] != 1:
-                    c += 1
+                    a += 1
                 if b == width or grid[x][b + 1] != 1:
-                    c += 1
+                    a += 1
                 if x == length or grid[x + 1][b] != 1:
                     a += 1
     return a
