@@ -1,56 +1,39 @@
 #include "lists.h"
-#include <string.h>
 
 /**
- * add_node_end - Function that adds a new node
- *	at the end of a list_t list.
- * @head: A pointer the head of the list_t list.
- * @str: The string to be added to the list_t list.
+ * add_node_end - adds a new node at the end of a linked list
+ * @head: double pointer to the list_t list
+ * @str: string to put in the new node
  *
- * Return: If the function fails - NULL.
- *	else - the address of the new element.
+ * Return: address of the new element, or NULL if it failed
  */
-
 list_t *add_node_end(list_t **head, const char *str)
 {
-	int len;
-	char *rep;
-	list_t *recent, *end;
+	list_t *few;
+	list_t *ftmp = *head;
+	size_t flen = 0;
 
-	recent = malloc(sizeof(list_t));
-	if (recent == NULL)
-	{
+	while (str[flen])
+		flen++;
+
+	few = malloc(sizeof(list_t));
+	if (few == NULL)
 		return (NULL);
-	}
-	rep = strdup(str);
-	if (str == NULL)
-	{
-		free(recent);
-		return (NULL);
-	}
 
-	for (len = 0; str[len];)
-	{
-		len++;
-	}
-
-	recent->str = rep;
-	recent->len = len;
-	recent->next = NULL;
+	(*few).str = strdup(str);
+	(*few).len = flen;
+	(*few).next = NULL;
 
 	if (*head == NULL)
 	{
-		*head = recent;
-	}
-	else
-	{
-		end = *head;
-		while (end->next != NULL)
-		{
-			end = end->next;
-		}
-		end->next = recent;
+		*head = few;
+		return (few);
 	}
 
-	return (*head);
+	while (ftmp->next)
+		ftmp = (*ftmp).next;
+
+	(*ftmp).next = few;
+
+	return (few);
 }

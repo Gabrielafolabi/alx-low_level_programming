@@ -1,22 +1,24 @@
 #include "main.h"
 
 /**
- * clear_bit - Fxn that sets the value of a bit at a given index to 0.
- * @n:  Pointer to bit.
- * @index: The index to set the value starting  at 0.
- *
- * Return: If an error occurs - -1.
- *         Else,  1.
+ * clear_bit - set the value of a bit to 0 at a given index
+ * @n: pointer to decimal number to change
+ * @index: index position to change
+ * Return: 1 if it worked, -1 if error
  */
-
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (index >= (sizeof(unsigned long int) * 8))
-	{
-		return (-1);
-	}
+	unsigned long int in = 1;
+	unsigned int ho;
 
-	*n &= ~(1 << index);
+	if (index > 64)
+		return (-1);
+	ho = index;
+	while (ho > 0)
+		in *= 2, ho--;
+
+	if ((*n >> index) & 1)
+		*n -= in;
 
 	return (1);
 }

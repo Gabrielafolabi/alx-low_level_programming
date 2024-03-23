@@ -1,43 +1,36 @@
 #include <stdio.h>
-/**
- * main - Write a program that prints all possible different combinations of three digits
- *
- * Return: Always 0 (Success)
- */
 
+/**
+ * main - Main Entry Point
+ *
+ * Return: 0 ensure it is a success
+ */
 int main(void)
 {
-	int num1, num2, num3;
-	for (num1 = 0; num1 < 10; num1++)
+	int nu = 0, nu1 = 1, nu2 = 2;
+
+	while (nu <= 8)
 	{
-		for (num2 = 0; num2 < 10; num2++)
+		nu1 = nu + 1;
+		while (nu1 <= 9)
 		{
-			for (num3 = 0; num3 < 10; num3++)
+			nu2 = nu1 + 1;
+			while (nu2 <= 9)
 			{
-				putchar((num1 % 10) + '0');
-				putchar((num2 % 10) + '0');
-				putchar((num3 % 10) + '0');
-				
-				putchar(',');
-				putchar(' ');
-
-				if (num1 == 9 && num2 == 9 && num3 == 9)
-					break;
-			
-			
+				putchar(nu + '0');
+				putchar(nu1 + '0');
+				putchar(nu2 + '0');
+				if (nu != 7 || nu1 != 8 || nu2 != 9)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+				nu2++;
 			}
-		
-		
+			nu1++;
 		}
-	
-	
-	
-	
+		nu++;
 	}
-
-
 	putchar('\n');
 	return (0);
-
-
 }

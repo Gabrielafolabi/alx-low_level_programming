@@ -1,25 +1,24 @@
 #include "main.h"
-#include <unistd.h>
 
 /**
- * print_chessboard - function that prints the chessboard.
- *@a: first value -char
- *
+ * print_chessboard - prints the chessboard
+ * @a: two dimension array to print
  */
 
 void print_chessboard(char (*a)[8])
 {
-	int j, k;
-	k = 0;
+	int i = 0, j;
 
-	for (j = 0; j < 8; j++)
+	while (i <= 7)
 	{
-		
-		while (k < 8)
+		j = 0;
+
+		while (j <= 7)
 		{
-			_putchar (a[j][k]);
-			k++;
+			_putchar(a[i][j]);
+			j++;
 		}
 		_putchar('\n');
+		i++;
 	}
 }

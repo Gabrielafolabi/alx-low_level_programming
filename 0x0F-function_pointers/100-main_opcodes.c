@@ -1,18 +1,16 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- * main - Prints the opcodes of itself.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
- *
- * Return: Always 0.
+ * main - prints its own opcodes
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * Return: Always 0 (Success)
  */
 int main(int argc, char *argv[])
 {
-	int bytes, index;
-	int (*address)(int, char **) = main;
-	unsigned char opcode;
+	int byte, i = 0;
+	char *a;
 
 	if (argc != 2)
 	{
@@ -20,27 +18,25 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	bytes = atoi(argv[1]);
+	byte = atoi(argv[1]);
 
-	if (bytes < 0)
+	if (byte < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
 
-	for (index = 0; index < bytes; index++)
+	a = (char *)main;
+
+	while (i < byte)
 	{
-		opcode = *(unsigned char *)address;
-		printf("%.2x", opcode);
-
-		if (index == bytes - 1)
-			continue;
-		printf(" ");
-
-		address++;
+		if (i == byte - 1)
+		{
+			printf("%02hhx\n", a[i]);
+			break;
+		}
+		printf("%02hhx ", a[i]);
+		i++;
 	}
-
-	printf("\n");
-
 	return (0);
 }

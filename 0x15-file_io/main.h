@@ -1,22 +1,16 @@
-#ifndef MAIN_HEAD
-#define MAIN_HEAD
+#ifndef MAIN_H
+#define MAIN_H
 
-
-#include <stdio.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <sys/uio.h>
-#include <fcntl.h>
 #include <unistd.h>
-#include <stdlib.h>
-#include <elf.h>
+#include <fcntl.h>
 
 ssize_t read_textfile(const char *filename, size_t letters);
 int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
-int _strlen(char *s);
-void copy_file(const char *src, const char *dest);
+char *create_buffer(char *file);
+void close_file(int d);
 
-
-
-#endif 
+#endif /* MAIN_H */

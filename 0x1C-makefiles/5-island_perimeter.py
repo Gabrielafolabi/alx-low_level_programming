@@ -1,22 +1,28 @@
 #!/usr/bin/python3
-"""Defining 5-island_perimeter module"""
+"""Defines the island perimeter measuring function."""
 
 
 def island_perimeter(grid):
-    """Returns the perimeter of an island""
-    a = 0
-    height = len(grid) - 1
-    width = len(grid[0]) - 1
+    """Return the perimiter of an island.
 
-    for x, y in range(grid):
-        for b, n in range(y):
-            if n == 1:
-                if x == 0 or grid[x- 1][b] != 1:
-                    a += 1
-                if b == 0 or grid[x][b - 1] != 1:
-                    a += 1
-                if b == width or grid[x][b + 1] != 1:
-                    a += 1
-                if x == length or grid[x + 1][b] != 1:
-                    a += 1
-    return a
+    The grid represents water by 0 and land by 1.
+
+    Args:
+        grid (list): A list of list of integers representing the island.
+    Returns:
+        The perimeter of the island defined in grid.
+    """
+    fwidth = len(grid[0])
+    fheight = len(grid)
+    fedges = 0
+    fsize = 0
+
+    for f in range(fheight):
+        for fj in range(fwidth):
+            if grid[f][fj] == 1:
+                fsize += 1
+                if (fj > 0 and grid[f][fj - 1] == 1):
+                    fedges += 1
+                if (f > 0 and grid[f - 1][fj] == 1):
+                    fedges += 1
+    return fsize * 4 - fedges * 2

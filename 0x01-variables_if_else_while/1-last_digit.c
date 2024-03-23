@@ -3,28 +3,31 @@
 #include <stdio.h>
 
 /**
- * main - Prints the last digit of a randomly generated number.
- * 	follow by a new line
- * Return: Always 0 (Success)
+ * main - Main Entry Point
+ *
+ * Return: 0 ensure it is a success
  */
 int main(void)
 {
 	int n;
+	int ld;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-
-	if ((n % 10) > 5)
+	ld = n % 10;
+	printf("Last digit of %d is %d ", n, ld);
+	if (ld == 0)
 	{
-		printf("Last digit of %d is %d and is greater than 5\n", n, n % 10);
+		printf("and is 0\n");
 	}
-	else if ((n % 10) < 6 && (n % 10) != 0)
+	else if (ld > 5)
 	{
-		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, n % 10);
+		printf("and is greater than 5\n");
 	}
 	else
 	{
-		printf("Last digit of %d is %d and is 0\n", n, n % 10);
+		printf("and is less than 6 and not 0\n");
 	}
 	return (0);
 }
+
